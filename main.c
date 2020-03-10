@@ -203,6 +203,10 @@ static void advertising_init(void)
 
     err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &adv_params);
     APP_ERROR_CHECK(err_code);
+
+    err_code = sd_ble_gap_tx_power_set(BLE_GAP_TX_POWER_ROLE_ADV, m_adv_handle, 4);
+    APP_ERROR_CHECK(err_code);
+
 }
 
 
